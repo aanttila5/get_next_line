@@ -1,0 +1,7 @@
+Plan:
+read a file into a *char until new line or end of BUFFER_SIZE
+if new line: return
+if BUFFER_SIZE is up then save what's read into the *char and start reading again to look for the new line
+return once new line found
+*char should be a static variable
+HOW DO I READ INTO A *CHAR UNTIL BUFFER_SIZE AND FIGURE OUT WHAT'S IN IT???
