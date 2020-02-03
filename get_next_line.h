@@ -5,22 +5,29 @@
 /*                                                     +:+                    */
 /*   By: aanttila <aanttila@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/12/02 15:05:58 by aanttila       #+#    #+#                */
-/*   Updated: 2019/12/13 20:30:05 by aanttila      ########   odam.nl         */
+/*   Created: 2020/01/28 16:50:30 by aanttila       #+#    #+#                */
+/*   Updated: 2020/02/03 18:46:55 by aanttila      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
 
-char	*ft_strjoin(char *s1, char *s2, int i, int buf_size);
-char	*ft_strchr(char *s, int c);
-char	*ft_strdup(char *s1);
-int		ft_strichr(char *s, int c);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
+
+int		get_next_line(int fd, char **line);
+int		ft_strichr(char *s, char c);
+void	ft_bzero(void *s, size_t n);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strshift(char *str);
+size_t	ft_strlen(char *s);
+int		ft_error(char **line, char *str);
+char	*ft_linefill(char **line, char *str, int *retval);
+char	*ft_read(char *str, int *retval, int ret, int fd);
 
 #endif
