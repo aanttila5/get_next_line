@@ -6,7 +6,7 @@
 /*   By: aanttila <aanttila@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/28 16:47:07 by aanttila       #+#    #+#                */
-/*   Updated: 2020/02/03 19:12:36 by aanttila      ########   odam.nl         */
+/*   Updated: 2020/02/04 00:07:09 by aanttila      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ char		*ft_linefill(char **line, char *str, int *retval)
 {
 	if (ft_strichr((str), '\n') == 0)
 	{
-		*line = ft_strjoin(*line, str);
+		*line = ft_strjoin(line, str);
 		if (*line == 0)
 			*retval = (ft_error(line, str));
 		ft_bzero(str, (BUFFER_SIZE + 1));
 	}
 	else if (ft_strichr(str, '\n') != 0)
 	{
-		*line = ft_strjoin(*line, str);
+		*line = ft_strjoin(line, str);
 		if (*line == 0)
 			*retval = (ft_error(line, str));
 		ft_strshift(str);
@@ -59,10 +59,10 @@ int			get_next_line(int fd, char **line)
 	int				ret;
 	int				retval;
 
-	retval = BUFFER_SIZE;
 	if (fd < 0 || line == NULL)
 		return (-1);
 	ret = 1;
+	retval = 2;
 	*line = (char *)malloc(1 * sizeof(char));
 	if (*line == NULL)
 		return (-1);
@@ -76,7 +76,7 @@ int			get_next_line(int fd, char **line)
 		if (retval == -1 || retval == 1)
 			return (retval);
 	}
-	*line = ft_strjoin(*line, str);
+	*line = ft_strjoin(line, str);
 	if (*line == 0)
 		return (ft_error(line, str));
 	return (0);
