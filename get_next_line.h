@@ -6,7 +6,7 @@
 /*   By: aanttila <aanttila@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/28 16:50:30 by aanttila       #+#    #+#                */
-/*   Updated: 2020/02/03 18:46:55 by aanttila      ########   odam.nl         */
+/*   Updated: 2020/02/04 00:07:40 by aanttila      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@
 int		get_next_line(int fd, char **line);
 int		ft_strichr(char *s, char c);
 void	ft_bzero(void *s, size_t n);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin(char **s1, char *s2);
 char	*ft_strshift(char *str);
 size_t	ft_strlen(char *s);
 int		ft_error(char **line, char *str);
-char	*ft_linefill(char **line, char *str, int *retval);
-char	*ft_read(char *str, int *retval, int ret, int fd);
 
 #endif
